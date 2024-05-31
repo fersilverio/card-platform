@@ -1,5 +1,5 @@
 <main class="text-gray-200 leading-5">
-  <div class="">
+  <div>
     <h1 class="text-center text-5xl font-montserrat text-gray-200 my-5">Perfil de associado</h1>
   </div>
   <div class="grid grid-cols-3">
@@ -10,52 +10,16 @@
       <app-associate-description></app-associate-description>
     </div>
   </div>
-  <hr class=" my-10 border-gray-800">
+  <hr class="my-10 border-gray-800">
   <div class="grid grid-cols-3 items-start my-5">
     <div class="flex flex-col justify-start col-span-1 mx-24">
-      <h1 class="my-3 font-fira text-3xl">Log de ações</h1>
-
-      <div
-        class="container p-4 border border-gray-800 w-auto h-60 overflow-y-scroll rounded-lg shadow-gray-700 shadow-sm  bg-git-gray-700">
-        <ul class="font-carrois-gothic">
-          <li class="m-2">questbarman venceu o torneio Europeu!!</li>
-          <li class="m-2">O card "Desilusões do amor" foi obtido por questbarman.</li>
-          <li class="m-2">questbarman foi aprovado pelo clã "Lobos do inferno"</li>
-          <li class="m-2">questbarman acaba de atingir o nível 60!</li>
-          <li class="m-2">questbarman acaba de atingir o nível 50!</li>
-          <li class="m-2">questbarman acaba de atingir o nível 40!</li>
-          <li class="m-2">questbarman acaba de atingir o nível 30!</li>
-          <li class="m-2">questbarman acaba de atingir o nível 20!</li>
-        </ul>
-      </div>
+      <app-associate-action-logs></app-associate-action-logs>
     </div>
     <div class="col-span-1 flex flex-col">
-      <h1 class="my-3 text-3xl">Histórico de partidas</h1>
-      <div class="container border rounded-lg border-gray-800 w-auto h-60 shadow-gray-700 shadow-sm bg-git-gray-700">
-
-      </div>
+      <app-associate-matches-history></app-associate-matches-history>
     </div>
-
-    <div class="col-span-1 flex flex-col ">
-      <h1 class="my-3 text-center text-3xl">Condecorações</h1>
-      <div class="flex flex-row justify-around m-2">
-        <div class="border border-gray-700 rounded-full h-24 w-24 shadow-gray-700 shadow-sm bg-git-gray-700">
-        </div>
-        <div class="border border-gray-700 rounded-full h-24 w-24 shadow-gray-700 shadow-sm bg-git-gray-700">
-        </div>
-        <div class="border border-gray-700 rounded-full h-24 w-24 shadow-gray-700 shadow-sm bg-git-gray-700">
-        </div>
-      </div>
-      <div class="flex flex-row justify-around m-2">
-        <div class="border border-gray-700 rounded-full h-24 w-24 shadow-gray-700 shadow-sm bg-git-gray-700">
-        </div>
-        <div class="border border-gray-700 rounded-full h-24 w-24 shadow-gray-700 shadow-sm bg-git-gray-700">
-        </div>
-        <div class="border border-gray-700 rounded-full h-24 w-24 shadow-gray-700 shadow-sm bg-git-gray-700">
-        </div>
-      </div>
-
-
+    <div class="col-span-1 flex flex-col">
+      <app-associate-condecorations></app-associate-condecorations>
     </div>
   </div>
 
