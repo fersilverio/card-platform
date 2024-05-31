@@ -1,14 +1,18 @@
 <header>
   <div class="flex  bg-black w-full py-5 md:px-10 justify-end border-b-2 border-b-gray-800">
     <div class="w-full flex items-center justify-between">
-      <div class="text-white font-bold">
-        <img [routerLink]="['']" class=" w-14 h-10 border-gray-500 shadow-md" src="../../assets/img/logo-obsidiann.png">
-      </div>
+      <button>
+        <div class="text-white font-bold">
+          <img [routerLink]="['']" class=" w-14 h-10 border-gray-500 shadow-md"
+            src="../../assets/img/logo-obsidiann.png">
+        </div>
+      </button>
       <div class="text-white font-bold hidden md:flex">
         <nav class="flex">
           <ul class="flex justify-end items-center flex-1">
             <li class="px-2">
-              <div class="border px-3 py-2 border-gray-500 rounded-md text-white flex items-center">
+              <div
+                class="border px-3 py-2 border-gray-500 rounded-md text-white flex items-center hover:shadow-md hover:shadow-slate-500">
                 <i class="fa-regular fa-handshake"></i>
               </div>
             </li>
@@ -16,19 +20,21 @@
               <span class="border-r border-white"></span>
             </li>
             <li class="px-2">
-              <div class="border px-3 py-2 border-gray-500 rounded-md text-white flex items-center">
+              <div
+                class="border px-3 py-2 border-gray-500 rounded-md text-white flex items-center hover:shadow-md hover:shadow-slate-500">
                 <i class="fa-regular fa-bell"></i>
               </div>
             </li>
             <li class="px-2">
               <button [routerLink]="['profile']">
-                <div class="border px-3 py-2 border-gray-500 rounded-md text-white flex items-center">
+                <div
+                  class="border px-3 py-2 border-gray-500 rounded-md text-white flex items-center hover:shadow-md hover:shadow-slate-500">
                   <i class="fa-regular fa-user"></i>
                 </div>
               </button>
             </li>
             <li class="px-4">
-              <img class="rounded-full w-9 h-8 border border-gray-500 shadow-md"
+              <img class="rounded-full w-9 h-8 border border-gray-500 shadow-md hover:shadow-md hover:shadow-slate-500"
                 src="../../assets/img/profile-test.jpg">
             </li>
           </ul>
