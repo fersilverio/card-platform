@@ -1,32 +1,39 @@
 <main class="h-screen w-screen flex justify-center">
 
-  <div class="bg-git-gray-700 h-2/3 w-1/5 my-auto border border-gray-700 rounded-lg p-2">
-    <div class="flex flex-col gap-3">
+  <div
+    class="bg-gradient-to-bl from-gray-login-area-500 to-gray-login-area-900 h-2/4 w-1/5 my-auto border border-gray-700 rounded-lg p-2">
+    <div class="flex flex-col gap-5">
       <div class="text-center">
-        <h3>Login</h3>
+        <h3 class="text-3xl text-gray-400">Login</h3>
       </div>
       <div class="flex flex-col">
-        <label>Email:</label>
         <input
-          class="disabled:bg-git-gray-700 bg-git-gray-700 focus:border-b-gray-400 focus:outline-none focus:border-b-2"
+          class="disabled:bg-git-gray-700 bg-gradient-to-t from-slate-900 to-git-gray-700 h-12 focus:border-b-gray-400 focus:outline-none focus:border-b-2 rounded-lg text-left p-3  text-gray-400 shadow-sm shadow-gray-600"
           placeholder="Inserir email">
       </div>
       <div class="flex flex-col">
-        <label>Senha:</label>
         <input
-          class="disabled:bg-git-gray-700 bg-git-gray-700 focus:border-b-gray-400 focus:outline-none focus:border-b-2"
+          class="disabled:bg-git-gray-700 bg-gradient-to-t from-slate-900 to-git-gray-700 h-12 focus:border-b-gray-400 focus:outline-none focus:border-b-2 rounded-lg text-left p-3  text-gray-400 shadow-sm shadow-gray-600"
           placeholder="Inserir senha">
       </div>
       <div class="text-start">
         <button
-          class="text-gray-100 text-md rounded-md bg-gradient-to-tl from-purple-900 to-purple-600 w-full h-6 shadow-sm shadow-purple-600"
+          class="text-gray-100 text-md rounded-md bg-gradient-to-tr from-purple-900 to-purple-300 w-full h-6 shadow-sm shadow-purple-600"
           type="submit">Entrar</button>
       </div>
       <div class="text-start">
-        <h6>Esqueceu a senha?</h6>
+        <h6 class="text-gray-400">Esqueceu a senha?</h6>
       </div>
-      <div class="text-start">
-        <h6>Ainda não é um associado?</h6>
+      <hr class="border-gray-700 mt-2 mb-2">
+      <div class="flex flex-col gap-5">
+        <div class="text-start">
+          <h6 class="text-xl text-gray-400">Ainda não é um associado?</h6>
+        </div>
+        <div class="text-start">
+          <button
+            class="text-gray-100 text-md rounded-md bg-gradient-to-tr from-blue-900 to-blue-300 w-full h-6 shadow-sm shadow-blue-600"
+            type="submit">Cadastrar</button>
+        </div>
       </div>
 
     </div>
