@@ -1,16 +1,22 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { UserLoginService } from '../services/user-login.service';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
   selector: 'app-associate-login',
   standalone: true,
   imports: [RouterLink, RouterOutlet, ReactiveFormsModule],
+  providers: [UserLoginService, HttpClient],
   templateUrl: './associate-login.component.html',
   styleUrl: './associate-login.component.css'
 })
 export class AssociateLoginComponent {
+  constructor(private readonly userLoginService: UserLoginService) {
+
+  }
 
 
   applyForm = new FormGroup({
@@ -19,8 +25,13 @@ export class AssociateLoginComponent {
   });
 
 
-  submitForm(email: string, password: string) {
-    console.log('Emailername:', email);
-    console.log('Password:', password);
+
+
+
+
+  submitForm() {
+    console.log('Email:', this.applyForm.value.email);
+    console.log('Password:', this.applyForm.value.password);
+    this.userLoginService.login(this.applyForm.value.email, this.applyForm.value.password);
   }
 }

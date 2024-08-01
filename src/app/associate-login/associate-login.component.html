@@ -10,18 +10,18 @@
         <div class="flex flex-col">
           <input
             class="disabled:bg-git-gray-700 bg-gradient-to-t from-slate-900 to-git-gray-700 h-12 focus:border-b-gray-400 focus:outline-none focus:border-b-2 rounded-lg text-left p-3  text-gray-400 shadow-sm shadow-gray-600"
-            placeholder="Inserir email">
+            placeholder="Inserir email" formControlName="email">
         </div>
         <div class="flex flex-col">
           <input
             class="disabled:bg-git-gray-700 bg-gradient-to-t from-slate-900 to-git-gray-700 h-12 focus:border-b-gray-400 focus:outline-none focus:border-b-2 rounded-lg text-left p-3  text-gray-400 shadow-sm shadow-gray-600"
-            placeholder="Inserir senha">
+            placeholder="Inserir senha" formControlName="password">
         </div>
       </form>
       <div class="text-start">
         <button
           class="text-gray-100 text-md rounded-md bg-gradient-to-tr from-purple-900 to-purple-300 w-full shadow-sm shadow-purple-600 pt-2 pb-2"
-          type="submit">Entrar</button>
+          (click)="submitForm()">Entrar</button>
       </div>
       <div class="text-start">
         <h6 class="text-gray-400">Esqueceu a senha?</h6>
