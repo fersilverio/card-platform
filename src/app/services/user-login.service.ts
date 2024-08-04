@@ -17,7 +17,7 @@ export class UserLoginService {
         sessionStorage.setItem("auth-token", value.token);
         this.router.navigate(['/']);
       })
-    ).subscribe();
+    )
   }
 
   logout() {

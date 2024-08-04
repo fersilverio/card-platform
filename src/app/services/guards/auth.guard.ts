@@ -9,7 +9,6 @@ export const authGuard: CanActivateFn = (route, state) => {
   if (authService.isLogged) {
     return true;
   } else {
-    console.log('nao esta logado, direcionando pro login...')
     router.navigate(['/login']);
     return false;
   }
