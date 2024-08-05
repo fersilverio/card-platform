@@ -4,11 +4,12 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { UserLoginService } from '../services/user-login.service';
 import { LoadingComponent } from '../shared/loading/loading.component';
 import { CommonModule } from '@angular/common';
+import { ToastComponent } from '../shared/toast/toast.component';
 
 @Component({
   selector: 'app-associate-login',
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterOutlet, ReactiveFormsModule, LoadingComponent],
+  imports: [CommonModule, RouterLink, RouterOutlet, ReactiveFormsModule, LoadingComponent, ToastComponent],
   templateUrl: './associate-login.component.html',
   styleUrl: './associate-login.component.css'
 })
