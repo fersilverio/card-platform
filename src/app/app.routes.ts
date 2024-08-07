@@ -16,7 +16,7 @@ export const routes: Routes = [
   {
     path: 'profile',
     component: AssociateProfileComponent,
-    canActivate: [authGuard],
+    //canActivate: [authGuard],
     title: 'Associate Profile',
   },
   {

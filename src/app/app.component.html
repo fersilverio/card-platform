@@ -1,7 +1,17 @@
-<div class="bg-git-gray-900">
-  <app-navbar></app-navbar>
+<div class="bg-git-gray-900 flex flex-col min-h-screen">
+  <div class="fixed w-full top-0 z-10">
+    <app-navbar></app-navbar>
+  </div>
 
-  <router-outlet></router-outlet>
-  <!-- <app-associate-profile></app-associate-profile> -->
-  <app-footer></app-footer>
+  <!-- <div class="navbar-space"></div> -->
+
+  <div class="flex-grow">
+    <router-outlet></router-outlet>
+  </div>
+
+  <div class="h-16"></div>
+
+  <div class="fixed w-full bottom-0 z-10">
+    <app-footer></app-footer>
+  </div>
 </div>

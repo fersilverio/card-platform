@@ -1,6 +1,6 @@
-<main class="h-screen w-screen flex justify-center">
+<main class="flex justify-center mt-44 relative">
   <div
-    class="bg-gradient-to-bl from-gray-login-area-500 to-gray-login-area-900 h-2/4 w-1/5 my-auto border border-gray-700 rounded-lg p-2">
+    class="bg-gradient-to-bl from-gray-login-area-500 to-gray-login-area-900 h-2/4 w-1/5 border border-gray-700 rounded-lg p-2">
     <div class="flex flex-col gap-6">
       <div class="text-center">
         <h3 class="text-3xl text-gray-400">Login</h3>
@@ -8,12 +8,12 @@
       <form [formGroup]="applyForm">
         <div class="flex flex-col">
           <input
-            class="disabled:bg-git-gray-700 bg-gradient-to-t from-slate-900 to-git-gray-700 h-12 focus:border-b-gray-400 focus:outline-none focus:border-b-2 rounded-lg text-left p-3  text-gray-400 shadow-sm shadow-gray-600"
+            class="disabled:bg-git-gray-700 bg-gradient-to-t from-slate-900 to-git-gray-700 h-12 focus:border-b-gray-400 focus:outline-none focus:border-b-2 rounded-lg text-left p-3 text-gray-400 shadow-sm shadow-gray-600"
             placeholder="Inserir email" formControlName="email">
         </div>
         <div class="flex flex-col mt-3">
           <input
-            class="disabled:bg-git-gray-700 bg-gradient-to-t from-slate-900 to-git-gray-700 h-12 focus:border-b-gray-400 focus:outline-none focus:border-b-2 rounded-lg text-left p-3  text-gray-400 shadow-sm shadow-gray-600"
+            class="disabled:bg-git-gray-700 bg-gradient-to-t from-slate-900 to-git-gray-700 h-12 focus:border-b-gray-400 focus:outline-none focus:border-b-2 rounded-lg text-left p-3 text-gray-400 shadow-sm shadow-gray-600"
             placeholder="Inserir senha" formControlName="password">
         </div>
       </form>
@@ -36,13 +36,13 @@
             type="submit">Cadastrar</button>
         </div>
       </div>
-
     </div>
     <div *ngIf="loading" class="absolute inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
       <app-loading></app-loading>
     </div>
   </div>
+
+  <div class="absolute right-5 top-0 bottom-0 flex-col flex items-end">
+    <app-toast></app-toast>
+  </div>
 </main>
-<div class="p-5">
-  <app-toast></app-toast>
-</div>
