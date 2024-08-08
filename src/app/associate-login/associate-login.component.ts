@@ -4,17 +4,26 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { UserLoginService } from '../services/user-login.service';
 import { LoadingComponent } from '../shared/loading/loading.component';
 import { CommonModule } from '@angular/common';
+import { ToastModule } from 'primeng/toast';
+import { ButtonModule } from 'primeng/button';
+import { RippleModule } from 'primeng/ripple';
+import { MessageService } from 'primeng/api';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastComponent } from '../shared/toast/toast.component';
 
 @Component({
   selector: 'app-associate-login',
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterOutlet, ReactiveFormsModule, LoadingComponent, ToastComponent],
+  imports: [CommonModule, RouterLink, RouterOutlet, ReactiveFormsModule, LoadingComponent, ToastModule, ButtonModule, RippleModule, ToastComponent],
+  providers: [MessageService],
   templateUrl: './associate-login.component.html',
   styleUrl: './associate-login.component.css'
 })
 export class AssociateLoginComponent {
-  constructor(private readonly userLoginService: UserLoginService) { }
+  constructor(
+    private readonly userLoginService: UserLoginService,
+    private messageService: MessageService
+  ) { }
 
   applyForm = new FormGroup({
     email: new FormControl('', Validators.required),
@@ -40,5 +49,9 @@ export class AssociateLoginComponent {
         }
       });
     }
+  }
+
+  show() {
+    this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Message Content' });
   }
 }
