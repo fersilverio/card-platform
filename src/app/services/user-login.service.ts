@@ -15,7 +15,6 @@ export class UserLoginService {
     return this.httpClient.post<ILoggedUser>("http://localhost:8080/auth/login", { email: email, password: password }).pipe(
       tap((value) => {
         sessionStorage.setItem("auth-token", value.token);
-        this.router.navigate(['/']);
       })
     )
   }

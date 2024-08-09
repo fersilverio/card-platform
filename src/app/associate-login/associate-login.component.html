@@ -42,7 +42,8 @@
     </div>
   </div>
 
-  <div class="absolute right-5 top-0 bottom-0 flex-col flex items-end">
+  <div [@showToast]="isToastVisible ? 'show' : 'hide'" class="absolute right-5 top-0 bottom-0 flex-col flex items-end">
     <app-toast></app-toast>
   </div>
+  <!-- <app-toast></app-toast> -->
 </main>

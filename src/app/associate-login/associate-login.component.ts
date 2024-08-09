@@ -1,28 +1,33 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserLoginService } from '../services/user-login.service';
 import { LoadingComponent } from '../shared/loading/loading.component';
 import { CommonModule } from '@angular/common';
-import { ToastModule } from 'primeng/toast';
-import { ButtonModule } from 'primeng/button';
-import { RippleModule } from 'primeng/ripple';
-import { MessageService } from 'primeng/api';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastComponent } from '../shared/toast/toast.component';
+import { animate, state, style, transition, trigger } from '@angular/animations';
+
+
 
 @Component({
   selector: 'app-associate-login',
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterOutlet, ReactiveFormsModule, LoadingComponent, ToastModule, ButtonModule, RippleModule, ToastComponent],
-  providers: [MessageService],
+  imports: [CommonModule, RouterLink, RouterOutlet, ReactiveFormsModule, LoadingComponent, ToastComponent],
+  providers: [],
   templateUrl: './associate-login.component.html',
-  styleUrl: './associate-login.component.css'
+  styleUrl: './associate-login.component.css',
+  animations: [
+    trigger('showToast', [
+      state('hide', style({ opacity: 0 })),
+      state('show', style({ opacity: 1 })),
+      transition('hide => show', animate('0.3s ease-in'))
+    ])
+  ],
 })
 export class AssociateLoginComponent {
   constructor(
     private readonly userLoginService: UserLoginService,
-    private messageService: MessageService
+    private readonly router: Router
   ) { }
 
   applyForm = new FormGroup({
@@ -31,6 +36,7 @@ export class AssociateLoginComponent {
   });
 
   loading = false;
+  isToastVisible = false;
 
 
   submitForm() {
@@ -41,17 +47,24 @@ export class AssociateLoginComponent {
       this.userLoginService.login(this.applyForm.value.email, this.applyForm.value.password).subscribe({
         next: () => {
           this.loading = false;
-          console.log("Success")
+          this.showToast();
+          setTimeout(() => {
+            this.router.navigate(['/']);
+          }, 1500);
         },
         error: (error) => {
           this.loading = false;
           console.error('Error:', error);
-        }
+        },
+        complete: () => {
+          this.applyForm.reset();
+
+        },
       });
     }
   }
 
-  show() {
-    this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Message Content' });
+  showToast() {
+    this.isToastVisible = this.isToastVisible ? false : true;
   }
 }
