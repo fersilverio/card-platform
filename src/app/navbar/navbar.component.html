@@ -9,7 +9,7 @@
       </button>
       <div class="text-white font-bold hidden md:flex">
         <nav class="flex">
-          <ul class="flex justify-end items-center flex-1">
+          <ul class="flex items-center  flex-row">
             <li class="px-2">
               <div
                 class="border px-3 py-2 border-gray-500 rounded-md text-white flex items-center hover:shadow-md hover:shadow-slate-500">
@@ -33,9 +33,16 @@
                 </div>
               </button>
             </li>
-            <li class="px-4">
-              <img class="rounded-full w-9 h-8 border border-gray-500 shadow-md hover:shadow-md hover:shadow-slate-500"
-                src="../../assets/img/profile-test.jpg">
+            <li class="px-5">
+              <div class="dropdown">
+                <div class="avatar avatar-ring">
+                  <img class="rounded-full w-9 h-8  shadow-md hover:shadow-md hover:shadow-slate-500"
+                    src="../../assets/img/profile-test.jpg" tabindex="0">
+                </div>
+                <div class="dropdown-menu">
+                  <a tabindex="-1" (click)="triggerLogout()" class="dropdown-item text-sm text-red-700">Logout</a>
+                </div>
+              </div>
             </li>
           </ul>
         </nav>
