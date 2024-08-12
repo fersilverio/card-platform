@@ -7,7 +7,7 @@
             src="../../assets/img/logo-obsidiann.png">
         </div>
       </button>
-      <div class="text-white font-bold hidden md:flex">
+      <div *ngIf="isLogged" class="text-white font-bold hidden md:flex">
         <nav class="flex">
           <ul class="flex items-center  flex-row">
             <li class="px-2">

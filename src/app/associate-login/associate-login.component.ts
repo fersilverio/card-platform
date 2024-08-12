@@ -42,15 +42,14 @@ export class AssociateLoginComponent {
   submitForm() {
     if (this.applyForm.valid) {
       this.loading = true;
-      console.log('Email:', this.applyForm.value.email);
-      console.log('Password:', this.applyForm.value.password);
+
       this.userLoginService.login(this.applyForm.value.email, this.applyForm.value.password).subscribe({
         next: () => {
           this.loading = false;
           this.showToast();
           setTimeout(() => {
             this.router.navigate(['/']);
-          }, 1500);
+          }, 1000);
         },
         error: (error) => {
           this.loading = false;
