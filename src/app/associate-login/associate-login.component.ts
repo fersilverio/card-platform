@@ -20,7 +20,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
     trigger('showToast', [
       state('hide', style({ opacity: 0 })),
       state('show', style({ opacity: 1 })),
-      transition('hide => show', animate('0.3s ease-in'))
+      transition('hide <=> show', animate('0.3s ease-in'))
     ])
   ],
 })
@@ -36,7 +36,11 @@ export class AssociateLoginComponent {
   });
 
   loading = false;
+
   isToastVisible = false;
+  toastTitle!: string;
+  toastClass!: string;
+  toastMessage!: string;
 
 
   submitForm() {
@@ -46,6 +50,9 @@ export class AssociateLoginComponent {
       this.userLoginService.login(this.applyForm.value.email, this.applyForm.value.password).subscribe({
         next: () => {
           this.loading = false;
+          this.toastTitle = 'Sucesso';
+          this.toastMessage = 'Usuário autenticado!';
+          this.toastClass = 'bg-green-500'
           this.showToast();
           setTimeout(() => {
             this.router.navigate(['/']);
@@ -53,6 +60,10 @@ export class AssociateLoginComponent {
         },
         error: (error) => {
           this.loading = false;
+          this.toastTitle = "Erro"
+          this.toastMessage = 'Autenticação falhou!'
+          this.toastClass = 'bg-red-500'
+          this.showToast();
           console.error('Error:', error);
         },
         complete: () => {

@@ -1,11 +1,11 @@
-<div class="w-72 h-24 rounded-sm bg-green-500  flex flex-col justify-center text-white">
+<div class="w-72 h-24 rounded-sm {{classColor}} flex flex-col justify-center text-white">
   <div class="flex flex-row gap-5 p-5">
     <div class="flex flex-col">
       <i class="fa-solid fa-circle-check text-white text-3xl mt-2"></i>
     </div>
     <div class="flex flex-col opacity-100">
-      <h6 class="font-bold opacity-100">Sucesso</h6>
-      <p class="mb-3">Usuário autenticado!</p>
+      <h6 class="font-bold opacity-100">{{ title }}</h6>
+      <p class="mb-3">{{ message }}</p>
     </div>
   </div>
 </div>
