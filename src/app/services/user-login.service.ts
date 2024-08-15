@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { ILoggedUser } from "../interfaces/logged-user.interface";
 import { BehaviorSubject, tap } from "rxjs";
+import { api } from "../../environments/environment";
 
 @Injectable()
 export class UserLoginService {
@@ -15,7 +16,7 @@ export class UserLoginService {
   ) { }
 
   login(email: string | null | undefined, password: string | null | undefined) {
-    return this.httpClient.post<ILoggedUser>("http://localhost:8080/auth/login", { email: email, password: password }).pipe(
+    return this.httpClient.post<ILoggedUser>(`${api.emerald}auth/login`, { email: email, password: password }).pipe(
       tap((value) => {
         sessionStorage.setItem("auth-token", value.token);
         this.loggedIn.next(true);
