@@ -10,6 +10,6 @@ export class UserCrudService {
   ) { }
 
   createAssociateUser(input: IUserRegistry) {
-    return this.httpClient.post<IUserRegistry>(`${api.emerald}/associate-users`, input);
+    return this.httpClient.post<IUserRegistry>(`${api.emerald}/auth/register`, input);
   }
 }
