@@ -1,3 +1,5 @@
+import { UserRole } from "../shared/enums/UserRole";
+
 export interface IUser {
   id: number;
   name: string;
@@ -9,4 +11,8 @@ export interface IUserRegistry {
   nickName: string;
   email: string;
   password: string;
+  role: UserRole;
 }
+
+
+

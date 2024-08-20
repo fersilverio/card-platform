@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserCrudService } from '../services/user-crud.service';
 import { IUserRegistry } from '../interfaces/user.interface';
+import { UserRole } from '../shared/enums/UserRole';
 
 @Component({
   selector: 'app-associate-registry',
@@ -12,6 +13,8 @@ import { IUserRegistry } from '../interfaces/user.interface';
   styleUrl: './associate-registry.component.css'
 })
 export class AssociateRegistryComponent {
+  isAdmin: boolean = false
+
   registryForm = new FormGroup({
     name: new FormControl('', Validators.required),
     nickName: new FormControl('', Validators.required),
@@ -22,14 +25,13 @@ export class AssociateRegistryComponent {
   constructor(private readonly userCrud: UserCrudService) { }
 
   submitForm() {
-    console.log("rapaz...")
     if (this.registryForm.valid) {
-      debugger;
       this.userCrud.createAssociateUser({
         name: this.registryForm.value.name,
         nickName: this.registryForm.value.nickName,
         email: this.registryForm.value.email,
         password: this.registryForm.value.password,
+        role: this.isAdmin ? UserRole.ADMIN : UserRole.USER
       } as IUserRegistry).subscribe({
         next: () => {
           this.registryForm.reset();
