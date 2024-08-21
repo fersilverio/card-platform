@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { UserLoginService } from '../services/user-login.service';
-import { LoadingComponent } from '../shared/loading/loading.component';
+import { UserLoginService } from '../shared/services/user-login.service';
+import { LoadingComponent } from '../shared/components/loading/loading.component';
 import { CommonModule } from '@angular/common';
-import { ToastComponent } from '../shared/toast/toast.component';
+import { ToastComponent } from '../shared/components/toast/toast.component';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 
 

@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
-import { IUserRegistry } from "../interfaces/user.interface";
 import { HttpClient } from "@angular/common/http";
-import { api } from "../../environments/environment";
+import { api } from "../../../environments/environment";
+import { IUserRegistry } from "../interfaces/user.interface";
 
 @Injectable()
 export class UserCrudService {

@@ -1,8 +1,8 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { ILoggedUser } from "../interfaces/logged-user.interface";
 import { BehaviorSubject, tap } from "rxjs";
-import { api } from "../../environments/environment";
+import { api } from "../../../environments/environment";
+import { ILoggedUser } from "../interfaces/logged-user.interface";
 
 @Injectable()
 export class UserLoginService {

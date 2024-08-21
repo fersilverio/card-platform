@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NavbarComponent } from './navbar/navbar.component';
-import { FooterComponent } from './footer/footer.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
 import { AssociateProfileComponent } from './associate-profile/associate-profile.component';
 import { HomeComponent } from './home/home.component';
-import { UserLoginService } from './services/user-login.service';
+import { UserLoginService } from './shared/services/user-login.service';
+import { NavbarComponent } from './shared/components/navbar/navbar.component';
 
 
 @Component({

@@ -3,8 +3,8 @@ import { AssociateProfileComponent } from './associate-profile/associate-profile
 import { HomeComponent } from './home/home.component';
 import { AssociateRegistryComponent } from './associate-registry/associate-registry.component';
 import { AssociateLoginComponent } from './associate-login/associate-login.component';
-import { authGuard } from './services/guards/auth.guard';
-import { notAuthenticatedUserGuard } from './services/guards/not-authenticated-user.guard';
+import { authGuard } from './shared/services/guards/auth.guard';
+import { notAuthenticatedUserGuard } from './shared/services/guards/not-authenticated-user.guard';
 
 export const routes: Routes = [
   {

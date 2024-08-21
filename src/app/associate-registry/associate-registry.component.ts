@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { UserCrudService } from '../services/user-crud.service';
-import { IUserRegistry } from '../interfaces/user.interface';
+import { UserCrudService } from '../shared/services/user-crud.service';
 import { UserRole } from '../shared/enums/UserRole';
+import { IUserRegistry } from '../shared/interfaces/user.interface';
 
 @Component({
   selector: 'app-associate-registry',
