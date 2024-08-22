@@ -1,4 +1,4 @@
-import { UserRole } from "../shared/enums/UserRole";
+import { UserRole } from "../enums/UserRole";
 
 export interface IUser {
   id: number;
