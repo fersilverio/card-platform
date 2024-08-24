@@ -33,7 +33,15 @@
               (click)="submitForm()">Cadastrar</button>
           </div>
         </div>
+        <div *ngIf="loading" class="absolute inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
+          <app-loading></app-loading>
+        </div>
       </form>
     </div>
   </div>
+
+  <div [@showToast]="isToastVisible ? 'show' : 'hide'" class="absolute right-5 top-0 bottom-0 flex-col flex items-end">
+    <app-toast [title]="toastTitle" [message]="toastMessage" [classColor]="toastClass" />
+  </div>
+
 </main>
