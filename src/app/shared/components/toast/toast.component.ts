@@ -1,9 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-toast',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './toast.component.html',
 })
 export class ToastComponent {
@@ -15,5 +16,8 @@ export class ToastComponent {
 
   @Input()
   classColor!: string;
+
+  @Input()
+  icon!: string;
 
 }

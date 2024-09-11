@@ -41,6 +41,7 @@ export class AssociateLoginComponent {
   toastTitle!: string;
   toastClass!: string;
   toastMessage!: string;
+  toastIcon!: string;
 
 
   submitForm() {
@@ -53,6 +54,7 @@ export class AssociateLoginComponent {
           this.toastTitle = 'Sucesso';
           this.toastMessage = 'Usuário autenticado!';
           this.toastClass = 'bg-green-500'
+          this.toastIcon = 'fa-solid fa-circle-check'
           this.showToast();
           setTimeout(() => {
             this.router.navigate(['/']);
@@ -63,6 +65,7 @@ export class AssociateLoginComponent {
           this.toastTitle = "Erro"
           this.toastMessage = 'Autenticação falhou!'
           this.toastClass = 'bg-red-500'
+          this.toastIcon = 'fa-solid fa-xmark'
           this.showToast();
           console.error('Error:', error);
         },
