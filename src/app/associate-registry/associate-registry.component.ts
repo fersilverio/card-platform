@@ -63,7 +63,7 @@ export class AssociateRegistryComponent {
           this.toastClass = 'bg-green-500'
           this.showToast();
           setTimeout(() => {
-            this.router.navigate(['/']);
+            this.router.navigate(['/login']);
           }, 1000);
         },
         error: (error) => {
